@@ -1,5 +1,10 @@
-with open(".token") as f:
-    API_TOKEN = f.readlines()[0].rstrip("\n")
+import json
+import os
+
+with open("secrets.json") as f:
+    secrets = json.load(f)
+
+API_TOKEN = secrets["slack"]["token"]
 
 DEFAULT_REPLY = "…"
 
